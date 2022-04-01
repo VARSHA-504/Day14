@@ -1,6 +1,9 @@
 package com.bl.linkedlistprogram;
 
+import java.util.Scanner;
+
 public class LinkedList {
+    Scanner scanner = new Scanner(System.in);
     Node head;
 
     // node creation
@@ -15,9 +18,6 @@ public class LinkedList {
         }
     }
 
-    /*
-     * This is the method to add first element
-     */
     public void addFirst(Object data) {
         // create new node
         Node newNode = new Node(data);
@@ -31,9 +31,7 @@ public class LinkedList {
         }
     }
 
-    /*
-     * This is the method to display elements
-     */
+
     public void display(Object data) {
         // list is empty
         if (head == null)
@@ -53,9 +51,6 @@ public class LinkedList {
         }
     }
 
-    /*
-     * This is the method to add last element
-     */
     public void addLast(Object data) {
         // create new node
         Node newNode = new Node(data);
@@ -76,9 +71,6 @@ public class LinkedList {
         }
     }
 
-    /*
-     * This is the method to delete first element
-     */
     public void deleteFirst() {
         // list is empty
         if (head == null)
@@ -107,10 +99,26 @@ public class LinkedList {
 
                 }
             }
-
+    public void addMiddle(Object data) {
+        // create new node
+        Node newNode = new Node(data);
+        // list is empty
+        if (head == null)
+            head = newNode;
+            // list has more than 1 elements
+        else {
+            Node temp = head;
+            System.out.println("Enter the data after which new data should be added");
+            Object data1 = scanner.nextInt();
+            // traverse up to data after which new data should be added
+            while (temp.data != data1) {
+                temp = temp.next;
+            }
+            newNode.next = temp.next;
+            temp.next = newNode;
         }
     }
-    public void search(Object data) {
+    public void search (Object data) {
 
         boolean isFound = false;
         // list is empty

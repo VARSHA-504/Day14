@@ -10,6 +10,7 @@ public class List1 {
         list1.addFirst(30);
         list1.addFirst(56);
         list1.display();
-        list1.search();
+        list1.addMiddle(40);
+        list1.display();
     }
 }
