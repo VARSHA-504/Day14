@@ -16,21 +16,12 @@ class Node {
 public class List1 {
     public static void main(String[] args) {
         System.out.println("Welcome to LinkedList Datastructure Program");
-        LinkedList<Integer> List1 = new LinkedList<Integer>();
-        Node firstNode = new Node(56);
-        Node secondNode = new Node(30);
-        Node thirdNode = new Node(70);
-        Node head = firstNode;
-        firstNode.next = secondNode;
-        secondNode.next = thirdNode;
-        Node tail = thirdNode;
+        LinkedList List1 = new LinkedList();
+        List1.addFirst(70);
+        List1.addFirst(56);
+        List1.add(1,30);
 
-        Node temp = head;
-        while (temp != null) {
-            System.out.println(temp.data);
-            temp = temp.next;
-
-        }
+        System.out.println(List1);
 
     }
 }
