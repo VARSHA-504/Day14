@@ -87,7 +87,8 @@ public class LinkedList {
         else {
             Node temp = head;
             head = temp.ref;
-
+        }
+    }
             public void deleteLast () {
                 // list is empty
                 if (head == null)
@@ -103,8 +104,35 @@ public class LinkedList {
                         temp = temp.ref;
                     }
                     temp.ref = null;
+
                 }
             }
+
         }
+    }
+    public void search(Object data) {
+
+        boolean isFound = false;
+        // list is empty
+        if (head == null)
+            System.out.println("No elements to search");
+            // list has only one element
+        else if (head.data == data)
+            isFound = true;
+            // list has more than 1 elements
+        else {
+            Node temp = head;
+            while (temp != null) {
+                if (temp.data == data) {
+                    isFound = true;
+                    break;
+                }
+                temp = temp.next;
+            }
+        }
+        if (isFound)
+            System.out.println("Data found ");
+        else
+            System.out.println(data + " not found");
     }
 }
