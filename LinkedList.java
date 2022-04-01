@@ -34,7 +34,7 @@ public class LinkedList {
     /*
      * This is the method to display elements
      */
-    public void display() {
+    public void display(Object data) {
         // list is empty
         if (head == null)
             System.out.println("No elements to display.");
@@ -87,6 +87,24 @@ public class LinkedList {
         else {
             Node temp = head;
             head = temp.ref;
+
+            public void deleteLast () {
+                // list is empty
+                if (head == null)
+                    System.out.println("No elements to delete");
+                    // list has only one element
+                else if (head.ref == null)
+                    head = null;
+                    // list is not empty
+                else {
+                    Node temp = head;
+                    // traverse up to ref of next node is null
+                    while (temp.ref.ref != null) {
+                        temp = temp.ref;
+                    }
+                    temp.ref = null;
+                }
+            }
         }
     }
 }
